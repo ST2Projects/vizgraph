@@ -2,6 +2,7 @@ name = "my-app"
 main = "./.svelte-kit/cloudflare/_worker.js"
 compatibility_date = "2025-05-31"
 compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = "./dist"
 
 # Production workers.dev domain
 workers_dev = true
