@@ -2,7 +2,7 @@
   "graphName": "cloud-platform",
   "artifacts": [
     {
-      "id": "com.cloud:api-gateway:jar:compile",v
+      "id": "com.cloud:api-gateway:jar:compile",
       "numericId": 1,
       "groupId": "com.cloud",
       "artifactId": "api-gateway",
