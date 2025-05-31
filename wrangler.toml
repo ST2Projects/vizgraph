@@ -9,6 +9,7 @@ globs = ["./data/**/*"]
 fallthrough = true
 
 [[rules]]
+type = "Text"
 type = "CompiledAsset"
 globs = ["config.json"]
 fallthrough = true
