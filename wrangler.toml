@@ -1,2 +1,22 @@
-compatibility_flags = [ "nodejs_compat" ]
-compatibility_date = "2024-09-23"
+name = "my-app"
+main = "./.svelte-kit/cloudflare/_worker.js"
+compatibility_date = "2025-05-31"
+compatibility_flags = ["nodejs_compat"]
+
+# Production workers.dev domain
+workers_dev = true
+
+[site]
+bucket = "./build"
+
+[build]
+command = "npm run build"
+
+[build.upload]
+format = "service-worker"
+
+[env.production]
+# Production-specific settings can go here
+
+[env.staging]
+# Staging-specific settings can go here
