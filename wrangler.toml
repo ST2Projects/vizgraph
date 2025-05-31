@@ -6,9 +6,6 @@ compatibility_flags = ["nodejs_compat"]
 # Production workers.dev domain
 workers_dev = true
 
-[site]
-bucket = "./build"
-
 [build]
 command = "npm run build"
 
