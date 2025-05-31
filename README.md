@@ -1,38 +1,50 @@
-# sv
+VizGraph - Interactive DOT Graph Visualizer
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+VizGraph is a proof of concept web application for interactively visualizing and manipulating Graphviz DOT files. Try it out at [vizgraph.pages.dev](https://vizgraph.pages.dev/)!
 
-## Creating a project
+## Overview
 
-If you're seeing this, you've probably already done this step. Congrats!
+This project demonstrates interactive visualization of graph structures defined in DOT format, built with modern web technologies:
 
-```bash
-# create a new project in the current directory
-npx sv create
+- **Framework**: SvelteKit 2.0
+- **Styling**: TailwindCSS + Skeleton UI
+- **Visualization**: D3.js
+- **Deployment**: Cloudflare Pages
 
-# create a new project in my-app
-npx sv create my-app
-```
+## Features
 
-## Developing
+- Load and visualize DOT format graph files
+- Interactive graph manipulation
+- Real-time graph updates
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Development
 
-```bash
-npm run dev
+### Prerequisites
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+- Node.js (v18 or later recommended)
+- npm
 
-## Building
+### Deployment
 
-To create a production version of your app:
+This project is configured for deployment to Cloudflare Pages. The live version can be found at [vizgraph.pages.dev](https://vizgraph.pages.dev/).
 
-```bash
-npm run build
-```
+To deploy your own instance:
+1. Fork this repository
+2. Connect it to Cloudflare Pages
+3. Configure the following settings:
+    - Build command: `npm run build`
+    - Build output directory: `dist`
+    - Add the `nodejs_compat` compatibility flag
 
-You can preview the production build with `npm run preview`.
+## Contributing
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+This is a proof of concept project, but contributions and suggestions are welcome! Please feel free to:
+- Open issues for bugs or feature requests
+- Submit pull requests
+- Share your feedback
+
+## Acknowledgments
+
+- Built with [SvelteKit](https://kit.svelte.dev/)
+- UI components from [Skeleton](https://www.skeleton.dev/)
+- Visualization powered by [D3.js](https://d3js.org/)
