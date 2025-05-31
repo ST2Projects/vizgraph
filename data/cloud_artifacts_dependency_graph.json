@@ -1,0 +1,232 @@
+{
+  "graphName": "cloud-platform",
+  "artifacts": [
+    {
+      "id": "com.cloud:api-gateway:jar:compile",v
+      "numericId": 1,
+      "groupId": "com.cloud",
+      "artifactId": "api-gateway",
+      "version": "3.1.0",
+      "optional": false,
+      "scopes": ["compile"],
+      "types": ["jar"]
+    },
+    {
+      "id": "com.cloud:load-balancer:jar:compile",
+      "numericId": 2,
+      "groupId": "com.cloud",
+      "artifactId": "load-balancer",
+      "version": "2.4.0",
+      "optional": false,
+      "scopes": ["compile"],
+      "types": ["jar"]
+    },
+    {
+      "id": "com.cloud.storage:object-store:jar:compile",
+      "numericId": 3,
+      "groupId": "com.cloud.storage",
+      "artifactId": "object-store",
+      "version": "4.0.1",
+      "optional": false,
+      "scopes": ["compile"],
+      "types": ["jar"]
+    },
+    {
+      "id": "com.cloud.storage:block-storage:jar:compile",
+      "numericId": 4,
+      "groupId": "com.cloud.storage",
+      "artifactId": "block-storage",
+      "version": "3.2.0",
+      "optional": false,
+      "scopes": ["compile"],
+      "types": ["jar"]
+    },
+    {
+      "id": "com.cloud.compute:container-service:jar:compile",
+      "numericId": 5,
+      "groupId": "com.cloud.compute",
+      "artifactId": "container-service",
+      "version": "5.0.0",
+      "optional": false,
+      "scopes": ["compile"],
+      "types": ["jar"]
+    },
+    {
+      "id": "com.cloud.compute:vm-service:jar:compile",
+      "numericId": 6,
+      "groupId": "com.cloud.compute",
+      "artifactId": "vm-service",
+      "version": "4.1.0",
+      "optional": false,
+      "scopes": ["compile"],
+      "types": ["jar"]
+    },
+    {
+      "id": "com.cloud.security:identity-manager:jar:compile",
+      "numericId": 7,
+      "groupId": "com.cloud.security",
+      "artifactId": "identity-manager",
+      "version": "3.3.0",
+      "optional": false,
+      "scopes": ["compile"],
+      "types": ["jar"]
+    },
+    {
+      "id": "com.cloud.security:key-vault:jar:compile",
+      "numericId": 8,
+      "groupId": "com.cloud.security",
+      "artifactId": "key-vault",
+      "version": "2.5.0",
+      "optional": false,
+      "scopes": ["compile"],
+      "types": ["jar"]
+    },
+    {
+      "id": "com.cloud.database:nosql-db:jar:compile",
+      "numericId": 9,
+      "groupId": "com.cloud.database",
+      "artifactId": "nosql-db",
+      "version": "4.2.0",
+      "optional": false,
+      "scopes": ["compile"],
+      "types": ["jar"]
+    },
+    {
+      "id": "com.cloud.database:sql-db:jar:compile",
+      "numericId": 10,
+      "groupId": "com.cloud.database",
+      "artifactId": "sql-db",
+      "version": "5.1.0",
+      "optional": false,
+      "scopes": ["compile"],
+      "types": ["jar"]
+    },
+    {
+      "id": "com.cloud.monitoring:metrics-collector:jar:compile",
+      "numericId": 11,
+      "groupId": "com.cloud.monitoring",
+      "artifactId": "metrics-collector",
+      "version": "2.0.1",
+      "optional": false,
+      "scopes": ["compile"],
+      "types": ["jar"]
+    },
+    {
+      "id": "com.cloud.monitoring:log-aggregator:jar:compile",
+      "numericId": 12,
+      "groupId": "com.cloud.monitoring",
+      "artifactId": "log-aggregator",
+      "version": "2.2.0",
+      "optional": false,
+      "scopes": ["compile"],
+      "types": ["jar"]
+    }
+  ],
+  "dependencies": [
+    {
+      "from": "com.cloud:api-gateway:jar:compile",
+      "to": "com.cloud:load-balancer:jar:compile",
+      "numericFrom": 1,
+      "numericTo": 2,
+      "resolution": "INCLUDED"
+    },
+    {
+      "from": "com.cloud:api-gateway:jar:compile",
+      "to": "com.cloud.security:identity-manager:jar:compile",
+      "numericFrom": 1,
+      "numericTo": 7,
+      "resolution": "INCLUDED"
+    },
+    {
+      "from": "com.cloud.storage:object-store:jar:compile",
+      "to": "com.cloud.security:key-vault:jar:compile",
+      "numericFrom": 3,
+      "numericTo": 8,
+      "resolution": "INCLUDED"
+    },
+    {
+      "from": "com.cloud.storage:block-storage:jar:compile",
+      "to": "com.cloud.security:key-vault:jar:compile",
+      "numericFrom": 4,
+      "numericTo": 8,
+      "resolution": "INCLUDED"
+    },
+    {
+      "from": "com.cloud.compute:container-service:jar:compile",
+      "to": "com.cloud.storage:block-storage:jar:compile",
+      "numericFrom": 5,
+      "numericTo": 4,
+      "resolution": "INCLUDED"
+    },
+    {
+      "from": "com.cloud.compute:vm-service:jar:compile",
+      "to": "com.cloud.storage:block-storage:jar:compile",
+      "numericFrom": 6,
+      "numericTo": 4,
+      "resolution": "INCLUDED"
+    },
+    {
+      "from": "com.cloud.database:nosql-db:jar:compile",
+      "to": "com.cloud.storage:object-store:jar:compile",
+      "numericFrom": 9,
+      "numericTo": 3,
+      "resolution": "INCLUDED"
+    },
+    {
+      "from": "com.cloud.database:sql-db:jar:compile",
+      "to": "com.cloud.storage:block-storage:jar:compile",
+      "numericFrom": 10,
+      "numericTo": 4,
+      "resolution": "INCLUDED"
+    },
+    {
+      "from": "com.cloud.monitoring:metrics-collector:jar:compile",
+      "to": "com.cloud.database:nosql-db:jar:compile",
+      "numericFrom": 11,
+      "numericTo": 9,
+      "resolution": "INCLUDED"
+    },
+    {
+      "from": "com.cloud.monitoring:log-aggregator:jar:compile",
+      "to": "com.cloud.database:nosql-db:jar:compile",
+      "numericFrom": 12,
+      "numericTo": 9,
+      "resolution": "INCLUDED"
+    },
+    {
+      "from": "com.cloud.compute:container-service:jar:compile",
+      "to": "com.cloud:load-balancer:jar:compile",
+      "numericFrom": 5,
+      "numericTo": 2,
+      "resolution": "INCLUDED"
+    },
+    {
+      "from": "com.cloud.compute:vm-service:jar:compile",
+      "to": "com.cloud:load-balancer:jar:compile",
+      "numericFrom": 6,
+      "numericTo": 2,
+      "resolution": "INCLUDED"
+    },
+    {
+      "from": "com.cloud.monitoring:metrics-collector:jar:compile",
+      "to": "com.cloud.monitoring:log-aggregator:jar:compile",
+      "numericFrom": 11,
+      "numericTo": 12,
+      "resolution": "INCLUDED"
+    },
+    {
+      "from": "com.cloud:api-gateway:jar:compile",
+      "to": "com.cloud.monitoring:metrics-collector:jar:compile",
+      "numericFrom": 1,
+      "numericTo": 11,
+      "resolution": "INCLUDED"
+    },
+    {
+      "from": "com.cloud.security:identity-manager:jar:compile",
+      "to": "com.cloud.security:key-vault:jar:compile",
+      "numericFrom": 7,
+      "numericTo": 8,
+      "resolution": "INCLUDED"
+    }
+  ]
+}

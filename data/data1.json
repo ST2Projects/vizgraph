@@ -1,0 +1,118 @@
+{
+  "graphName": "client-platform",
+  "artifacts": [
+    {
+      "id": "com.enterprise:auth-service:jar:compile",
+      "numericId": 2,
+      "groupId": "com.enterprise",
+      "artifactId": "auth-service",
+      "version": "2.1.0",
+      "optional": false,
+      "scopes": ["compile"],
+      "types": ["jar"]
+    },
+    {
+      "id": "com.enterprise:user-service:jar:compile",
+      "numericId": 3,
+      "groupId": "com.enterprise",
+      "artifactId": "user-service",
+      "version": "2.3.1",
+      "optional": false,
+      "scopes": ["compile"],
+      "types": ["jar"]
+    }
+  ],
+  "dependencies": [
+    {
+      "from": "com.enterprise:auth-service:jar:compile",
+      "to": "com.enterprise.common:shared-models:jar:compile",
+      "numericFrom": 2,
+      "numericTo": 7,
+      "resolution": "INCLUDED"
+    },
+    {
+      "from": "com.enterprise:user-service:jar:compile",
+      "to": "com.enterprise:auth-service:jar:compile",
+      "numericFrom": 3,
+      "numericTo": 2,
+      "resolution": "INCLUDED"
+    },
+    {
+      "from": "com.enterprise:user-service:jar:compile",
+      "to": "com.enterprise.common:shared-models:jar:compile",
+      "numericFrom": 3,
+      "numericTo": 7,
+      "resolution": "INCLUDED"
+    },
+    {
+      "from": "com.enterprise:notification-service:jar:compile",
+      "to": "com.enterprise.infra:message-broker:jar:compile",
+      "numericFrom": 4,
+      "numericTo": 10,
+      "resolution": "INCLUDED"
+    },
+    {
+      "from": "com.enterprise.ui:admin-dashboard:jar:compile",
+      "to": "com.enterprise:auth-service:jar:compile",
+      "numericFrom": 5,
+      "numericTo": 2,
+      "resolution": "INCLUDED"
+    },
+    {
+      "from": "com.enterprise.ui:admin-dashboard:jar:compile",
+      "to": "com.enterprise:user-service:jar:compile",
+      "numericFrom": 5,
+      "numericTo": 3,
+      "resolution": "INCLUDED"
+    },
+    {
+      "from": "com.enterprise.ui:user-portal:jar:compile",
+      "to": "com.enterprise:auth-service:jar:compile",
+      "numericFrom": 6,
+      "numericTo": 2,
+      "resolution": "INCLUDED"
+    },
+    {
+      "from": "com.enterprise.ui:user-portal:jar:compile",
+      "to": "com.enterprise:notification-service:jar:compile",
+      "numericFrom": 6,
+      "numericTo": 4,
+      "resolution": "INCLUDED"
+    },
+    {
+      "from": "com.enterprise.analytics:reporting-engine:jar:compile",
+      "to": "com.enterprise.infra:cache-service:jar:compile",
+      "numericFrom": 11,
+      "numericTo": 9,
+      "resolution": "INCLUDED"
+    },
+    {
+      "from": "com.enterprise.analytics:data-processor:jar:compile",
+      "to": "com.enterprise.infra:message-broker:jar:compile",
+      "numericFrom": 12,
+      "numericTo": 10,
+      "resolution": "INCLUDED"
+    },
+    {
+      "from": "com.enterprise.analytics:reporting-engine:jar:compile",
+      "to": "com.enterprise.analytics:data-processor:jar:compile",
+      "numericFrom": 11,
+      "numericTo": 12,
+      "resolution": "INCLUDED"
+    },
+    {
+      "from": "com.enterprise:core-service:jar:compile",
+      "to": "com.enterprise.infra:cache-service:jar:compile",
+      "numericFrom": 1,
+      "numericTo": 9,
+      "resolution": "INCLUDED"
+    },
+    {
+      "from": "com.enterprise:auth-service:jar:compile",
+      "to": "com.enterprise.infra:cache-service:jar:compile",
+      "numericFrom": 2,
+      "numericTo": 9,
+      "resolution": "INCLUDED"
+    }
+  ]
+}
