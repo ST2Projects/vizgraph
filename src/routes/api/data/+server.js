@@ -1,9 +1,8 @@
 import { readdir, readFile } from 'fs/promises';
 import { join } from 'path';
-import config from '../../../../config.json' with { type: 'json' };
 
 async function loadJsonFiles() {
-  const dataDir = config.dataDirectory;
+  const dataDir = "./data";
   let allData = {
     dependencies: [],
     artifacts: [],

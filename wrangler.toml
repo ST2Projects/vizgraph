@@ -3,12 +3,5 @@ compatibility_date = "2025-05-31"
 compatibility_flags = ["nodejs_compat"]
 pages_build_output_dir = "./dist"
 
-[[rules]]
-type = "Data"
-globs = ["./data/**/*"]
-fallthrough = true
-
-[[rules]]
-type = "Text"
-globs = ["config.json"]
-fallthrough = true
+[assets]
+directory = "./data"
