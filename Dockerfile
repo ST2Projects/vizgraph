@@ -1,6 +1,3 @@
-LABEL authors="st2projects"
-LABEL org.opencontainers.image.source=https://github.com/st2projects/vizgraph
-
 # builder stage
 FROM node:20-alpine AS builder
 
@@ -15,6 +12,9 @@ RUN npm run build
 
 # production stage
 FROM node:20-alpine
+
+LABEL authors="st2projects"
+LABEL org.opencontainers.image.source=https://github.com/st2projects/vizgraph
 
 WORKDIR /
 # Copy the built application
