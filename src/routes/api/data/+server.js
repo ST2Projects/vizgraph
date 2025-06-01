@@ -19,6 +19,7 @@ async function loadJsonFiles() {
       console.log("Loading data from FS")
       const files = await readdir(dataDir);
       const jsonFiles = files.filter((file) => file.endsWith('.json'));
+      console.log(`Found ${jsonFiles.length} JSON files in ${dataDir}`)
 
       for (const file of jsonFiles) {
         const filePath = join(dataDir, file);
