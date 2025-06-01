@@ -7,7 +7,7 @@ ENV ADAPTER=node
 COPY package*.json ./
 RUN npm ci
 COPY . .
-COPY .env .
+#COPY .env .
 RUN npm run build
 
 # production stage
