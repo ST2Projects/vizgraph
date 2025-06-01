@@ -1,13 +1,15 @@
 # builder stage
 FROM node:20-alpine AS builder
 
+LABEL authors="st2projects"
+LABEL org.opencontainers.image.source=https://github.com/st2projects/vizgraph
+
 WORKDIR /
 ENV TEST=false
 ENV ADAPTER=node
 COPY package*.json ./
 RUN npm ci
 COPY . .
-#COPY .env .
 RUN npm run build
 
 # production stage
