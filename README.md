@@ -36,6 +36,16 @@ To deploy your own instance:
     - Build output directory: `dist`
     - Add the `nodejs_compat` compatibility flag
 
+Alternatively, use the docker image. First pull the image
+```shell
+docker pull ghcr.io/st2projects/vizgraph:latest
+```
+
+Then run it
+```shell
+docker run -it --name vizgraph -v /path/to/graphviz/json:/data -p 3000:3000 ghcr.io/st2projects/vizgraph
+```
+
 ## Contributing
 
 This is a proof of concept project, but contributions and suggestions are welcome! Please feel free to:
