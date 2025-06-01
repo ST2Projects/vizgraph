@@ -11,4 +11,4 @@ updates:
       interval: "weekly"
     assignees:
     - "neo1908"
-   target-branch: "main"
+    target-branch: "main"
