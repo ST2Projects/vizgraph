@@ -15,6 +15,7 @@ jobs:
       packages: write
       contents: read
     steps:
+      - uses: actions/checkout@v4
       - name: Setup BuildX
         uses: docker/setup-buildx-action@v3
       - name: Login to registy ${{ env.REGISTRY }}
