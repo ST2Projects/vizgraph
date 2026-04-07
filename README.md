@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> Due to recent github outages this repo has been migrated to [https://gitlab.com/st2projects1/vizgraph](https://gitlab.com/st2projects1/vizgraph)
+
 # VizGraph - Interactive DOT Graph Visualizer
 [![CodeQL](https://github.com/ST2Projects/vizgraph/actions/workflows/github-code-scanning/codeql/badge.svg?branch=main)](https://github.com/ST2Projects/vizgraph/actions/workflows/github-code-scanning/codeql) [![Dependabot Updates](https://github.com/ST2Projects/vizgraph/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/ST2Projects/vizgraph/actions/workflows/dependabot/dependabot-updates) 
 
